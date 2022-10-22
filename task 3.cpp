@@ -53,17 +53,17 @@ void Graph::DFS() {
 	adjT = new list<int>[V];
 	for (int i = 0; i < V; i++) {
 		for (auto t = adj[i].begin(); t != adj[i].end(); t++) {
-			adjT[*t].push_back(i);  //qmnis transponirebul grafs
+			adjT[*t].push_back(i); //constructing transpose graph
 		}
 	}
 	for (int i = 0; i < V; i++)
 		visited[i] = 0;
 	int max = 0;
 	for (int i = 0; i < V; i++) {
-		if (f[i] > f[max])max = i; //vpoulobt im wveros romlis ganxilvis droc yvelaze metia
+		if (f[i] > f[max])max = i; 
 	}
 	time = 0;
-	dfsviz(max, visited, d, f, adjT); //ganvaxorcielot sigrmeshi dzebna transponirebulistvis (aq d faqtiurad ar gvchirdeba da arc f magram agar movushli)
+	dfsviz(max, visited, d, f, adjT); 
 	for (int i = 0; i < V; i++) {
 		if (visited[i] == 0) {
 			cout << "grafi ar aris bmuli" << endl;
