@@ -4,8 +4,7 @@
     a) adjacency list
     b) adjacency matrix
     
-G=(V,E) where V={a,b,c,d,e,f},
-E={(a,d),(b,a),(b,e)(c,b),(a,e),(c,e),(d,b),(e,d),(f,e)(f,c)}. 
+G=(V,E) where V={a,b,c,d,e,f},  E={(a,d),(b,a),(b,e)(c,b),(a,e),(c,e),(d,b),(e,d),(f,e)(f,c)}. 
 
 
 
@@ -28,5 +27,7 @@ The table below shows the wiring cost from city i to city j (million GEL). Betwe
                                   6 3 2 1 0
                                   
                                  
-5. given a graph G: ![image](https://user-images.githubusercontent.com/77808909/197341153-2224f4c7-7bf7-4e1e-8726-a2c97c1c6e54.png)
-   using the Floyd-Warshall algorithm, check if there is the cycle with negative weight.
+5. using the Floyd-Warshall algorithm, check if there is the cycle with negative weight in the given graph below.
+            
+            
+            ![image](https://user-images.githubusercontent.com/77808909/197341297-6856378d-bd5b-4b4f-bce9-7559c0d89543.png)
