@@ -2,8 +2,6 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
-// Creating shortcut for an integer pair
-// ქმნის სახელს რომელიც აღწერს მთელების წყვილს
 typedef pair<int, int> iPair;
 struct Graph
 {
@@ -41,7 +39,7 @@ struct Graph
 						cout << vec[i].first + 1 << " - " << vec[i].second + 1 << endl;
 							weight += we[i];
 					}
-				cout << "Total weight of electrification cables is " << weight;
+				cout << "Total weight of electrification wires is " << weight;
 					return;
 			}
 		}
@@ -62,11 +60,10 @@ struct Graph
 			cout << vec[i].first + 1 << " - " << vec[i].second + 1 << endl;
 			weight += we[i];
 		}
-		cout << "Total weight of electrification cables is " << weight;
+		cout << "Total weight of electrification wires is " << weight;
 	}
 };
-// To represent Disjoint Sets
-// სტრუქტურა, რომელიც თანაუკვეთ სიმრავლეებს წარმოადგენს
+
 struct DisjointSets
 {
 	int* parent, * rnk;
@@ -79,32 +76,27 @@ struct DisjointSets
 		parent = new int[n];
 		rnk = new int[n];
 		// Initially, all vertices are in different sets and have rank 0.
-		// თავიდან ყველა წვერო არიან განსხვავებულ სიმრავლეებში და აქვთ რანგი 0
 		for (int i = 0; i < n; i++)
 		{
 			rnk[i] = 0;
 			//every element is parent of itself
-			// ყველა ელემენტი არის თავისი თავის მშობელი
 			parent[i] = i;
 		}
 	}
 	// Find the parent of a node 'u' Path Compression
-	// პოულობს 'u' წვეროს სიმრავლის ფესვს და აკეთებს გზის დამოკლებას
 	int find(int u)
 	{
 		/* Make the parent of the nodes in the path from u-->parent[u] point to
-		parent[u]
-		- გზაზე u-დან ფესვამდე ყველა წვეროს მშობელი იქნება ფესვი */
+		parent[u]*/
 		if (u != parent[u])
 			parent[u] = find(parent[u]);
 		return parent[u];
 	}
-	// Union by rank გაერთიანება რანგის მიხედვით
+	// Union by rank
 	void Union(int x, int y)
 	{
 		x = find(x), y = find(y);
-		/* Make tree with smaller height a subtree of the other tree
-		- ხე, რომლის სიმაღლეც უფრო ნაკლებია გავხადოთ მეორე ხის ქვეხე */
+		/* Make tree with smaller height a subtree of the other tree */
 		if (rnk[x] > rnk[y])
 			parent[y] = x;
 		else // If rnk[x] <= rnk[y]
@@ -113,8 +105,7 @@ struct DisjointSets
 			rnk[y]++;
 	}
 };
-/* Functions returns weight of the MST
-ფუნქცია აბრუნებს მინიმალური დამფარავი ხის წონას */
+/* Functions returns weight of the MST*/
 int Graph::Kruskal_MST()
 {
 	int mst_wt = 0; // Initialize result
@@ -133,20 +124,17 @@ int Graph::Kruskal_MST()
 		int set_v = ds.find(v);
 		// Check if the selected edge is creating a cycle or not
 		// (Cycle is created if u and v belong to same set)
-		// ვამოწმებთ ქმნის თუ არა ამორჩეული წიბო ციკლს
-		// (ციკლია თუ u და v ეკუთვნიან ერთი და იგივე ხეს)
 		if (set_u != set_v)
 		{
 			// Current edge will be in the MST so print it
-			// განხილული წიბო იქნება მინიმალური დამფარავი ხის წიბო, ამიტომ
 			temp.first = u;
 			temp.second = v;
 			MST_edges.push_back(temp);
 				//cout << u << " - " << v << endl;
-			// Update MST weight განვაახლოთ მინიმალური დამფარავი ხის წონა
+			// Update MST weight 
 			//mst_wt += it->first;
 			weights.push_back(it->first);
-			// Merge two sets შევაერთოთ ორი სიმრავლე
+			// Merge two sets 
 			ds.Union(set_u, set_v);
 		}
 	}
@@ -157,7 +145,7 @@ int main()
 {
 		int V = 5, E = 10;
 		Graph g(V, E);
-		// adding edges - წიბოების დამატება
+		// adding edges
 		g.addEdge(1, 5, 6);
 		g.addEdge(1, 4, 3);
 		g.addEdge(1, 3, 4);
