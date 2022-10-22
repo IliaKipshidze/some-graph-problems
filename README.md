@@ -16,7 +16,7 @@ G=(V,E) where V={a,b,c,d,e,f},  E={(a,d),(b,a),(b,e)(c,b),(a,e),(c,e),(d,b),(e,d
    using the DFS algorithm, check if the given directed graph is strongly connected or not.
    
    
-4. The MST company plans to electrify 5 settlements.
+4. The MST company plans to electrify 5 cities.
 At first, generating stations were built in the 1st and 5th cities. other cities, to be provided with electricity, they should be connected to cities 1 or 5 by electric wires either directly or through other cities.
 The table below shows the wiring cost from city i to city j (million GEL). Between which cities should the firm lay power lines so that the cost is minimum, all cities are provided with electricity, and what will be the total cost of it?
                                   
