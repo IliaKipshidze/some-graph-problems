@@ -1,17 +1,16 @@
 ﻿
-//////////////////////////////////////////////      მოსაზღვრე წვეროთა სიით
+//////////////////////////////////////////////      using adjacency list
 
 //#include <iostream>
 //#include <list>
 //using namespace std;
 //class Graph
 //{
-//	int V; // cveroTa raodenoba
-//	list<char>* adj; // pointeri bmuli siebis masivze
+//	int V; // 
+//	list<char>* adj; 
 //public:
-//	Graph(int V); // konstruqtori
-//	void addEdge(char v, char w); // funqcia, romelic amatrbs cibos grafs
-//	// funqcia, romelic bechdavs grafs
+//	Graph(int V); 
+//	void addEdge(char v, char w);
 //	void printG();
 //};
 //Graph::Graph(int X)
@@ -52,7 +51,7 @@
 //	return 0;
 //}
 
-/////////////////////////////////////////       მატრიცით
+/////////////////////////////////////////       with adjacency matrix
 
 //#include <iostream>
 //#include <fstream>
@@ -73,7 +72,7 @@
 //	c 0 0 0 0 0 1
 //	d 1 0 0 0 1 0
 //	e 1 1 1 0 0 1
-//	f 0 0 0 0 0 0*/ //დაბეჭდვა ასე უფრო ლამაზი იქნება
+//	f 0 0 0 0 0 0*/ 
 //	cout << ' ';
 //	for (int i = 0; i < 6; i++) {
 //		cout << setw(4) << char('a' + i);
