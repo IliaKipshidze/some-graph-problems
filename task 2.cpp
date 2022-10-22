@@ -10,7 +10,6 @@ class Graph
 public:
 	Graph(int V);
 	void addEdge(char v, char w);
-	// bechdavs s cverodan siganeshi dzebnis algoritmit shemovlil cveroebs.
 	void prtEqualsTo2();
 	void BFS(int k);
 };
@@ -25,9 +24,9 @@ void Graph::addEdge(char v, char w)
 	adj[k].push_back(w);
 }
 void Graph::prtEqualsTo2() {
-	if (eq2.size() == 0)cout << "am grafshi mocemuli sawyisi wverodan d=2 mandzilit dashorebuli wvero ar aris" << endl;
+	if (eq2.size() == 0)cout << "there are no such vertices at distance d=2 from the starting vertex" << endl;
 	else {
-		cout << "grafshi mocemuli sawyisi wverodan d=2 mandzilit dashorebuli wvero/wveroebia:\n";
+		cout << "the vertices at distance d=2 from the starting vertex:\n";
 		for (int i = 0; i < eq2.size(); i++) {
 			cout << eq2[i] << endl;
 		}
@@ -36,28 +35,21 @@ void Graph::prtEqualsTo2() {
  void Graph::BFS(int k)
 {
 	int s = k - 'a';
-	// kvela cveros anichebs agmoucheneli cveros statuss
 	bool* visited = new bool[V];
 	int* d = new int[V];
 	for (int i = 0; i < V; i++) {
 		visited[i] = false;
 		d[i] = -1;
 	}
-	// rigi,romelsac vikenebt bfs-shi
 	list<int> queue;
-	// s cveros vanichebt agmochenilis statuss da shegvkavs rigshi
 	visited[s] = true;
 	d[s] = 0;
 	queue.push_back(s);
 	while (!queue.empty())
 	{
-		// rigidan amoige elementi da dabechde
 		s = queue.front();
-		cout << char('a'+s) << " " << "distance = " << d[s] << endl;//amis dawera am davalebashi sachiro ar aris ufro lamazi da tvalsachino rom iyos dzebnis gzasac davbechdav tavisi mandzilebit
+		cout << char('a'+s) << " " << "distance = " << d[s] << endl;
 		queue.pop_front();
-		// shemoiaret amogebuli cveros kvela mosazgvre cvero. Tu es
-		// wvero ar iko agmochenili, mas mianichet agmochenilis
-		// statusi da sheikvanet rigshi.
 		for (auto i = adj[s].begin(); i != adj[s].end(); ++i)
 		{
 			if (!visited[*i - 'a'])
@@ -79,7 +71,7 @@ int main()
 	G1.addEdge('d', 'b');
 	G1.addEdge('f', 'a');
 	G1.addEdge('f', 'c');
-	cout << "wvero a-dan dawyebuli siganeshi dzebnis gza, a wverodan mandzilebiturt" << endl;
+	cout << "BFS paths (starting vertex - a), with distances:" << endl;
 	G1.BFS('a');
 	G1.prtEqualsTo2();
 	return 0;
