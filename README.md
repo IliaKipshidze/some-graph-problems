@@ -28,6 +28,5 @@ The table below shows the wiring cost from city i to city j (million GEL). Betwe
                                   
                                  
 5. using the Floyd-Warshall algorithm, check if there is the cycle with negative weight in the given graph below.
-            
-            
-            ![image](https://user-images.githubusercontent.com/77808909/197341297-6856378d-bd5b-4b4f-bce9-7559c0d89543.png)
+            ![image](https://user-images.githubusercontent.com/77808909/197341349-a46571a6-8268-4419-a111-8d911b67521d.png)
+
