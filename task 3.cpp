@@ -46,7 +46,7 @@ void Graph::DFS() {
 	dfsviz(0, visited, d, f, adj);
 	for (int i = 0; i < V; i++) {
 		if (visited[i] == 0) {
-			cout << "grafi ar aris bmuli" << endl;
+			cout << "is not strongly connected" << endl;
 			return;
 		}    
 	}
@@ -66,11 +66,11 @@ void Graph::DFS() {
 	dfsviz(max, visited, d, f, adjT); 
 	for (int i = 0; i < V; i++) {
 		if (visited[i] == 0) {
-			cout << "grafi ar aris bmuli" << endl;
+			cout << "is not srongly connected" << endl;
 			return;
 		}
 	}
-	cout << "grafi bmulia" << endl;
+	cout << "strongly connected" << endl;
 }
 int main() {
 	Graph g(5);
